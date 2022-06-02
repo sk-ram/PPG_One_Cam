@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/welcome"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="105dp" />
+
+    <TextView
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="241dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Welcome to qCardia"
+        android:textSize="25dp"
+        android:fontFamily="@font/jssb"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="416dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's get started!"
+        android:textSize="20dp"
+        android:textColor="@color/lightgray"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="480dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="233dp"
+        android:layout_height="48dp"
+        android:background="@color/red"
+        android:fontFamily="@font/jsreg"
+        android:text="REGISTER"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="577dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="236dp"
+        android:layout_height="56dp"
+        android:fontFamily="@font/jsreg"
+        android:text="LOGIN"
+        android:textColor="@color/white"
+        android:background="@color/blue"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="647dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
