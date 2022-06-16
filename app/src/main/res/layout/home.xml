@@ -42,7 +42,7 @@
         android:id="@+id/button"
         android:layout_width="233dp"
         android:layout_height="48dp"
-        android:background="@color/red"
+        android:background="@drawable/redbutton"
         android:fontFamily="@font/jsreg"
         android:text="REGISTER"
         android:textColor="@color/white"
@@ -56,7 +56,7 @@
         android:fontFamily="@font/jsreg"
         android:text="LOGIN"
         android:textColor="@color/white"
-        android:background="@color/blue"
+        android:background="@drawable/bluebutton"
         tools:layout_editor_absoluteX="78dp"
         tools:layout_editor_absoluteY="647dp" />
 
