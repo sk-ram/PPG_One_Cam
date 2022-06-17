@@ -51,6 +51,7 @@
         android:fontFamily="@font/rr"
         android:textFontWeight="600"
         android:text="Login"
+        android:textAllCaps="false"
         android:textSize="15dp"
         android:textColor="@color/white"
         tools:layout_editor_absoluteX="89dp"

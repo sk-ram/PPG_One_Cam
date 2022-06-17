@@ -76,6 +76,7 @@
         android:background="@drawable/redbutton"
         android:fontFamily="@font/rr"
         android:textFontWeight="600"
+        android:textAllCaps="false"
         android:text="REGISTER"
         android:textSize="15dp"
         android:textColor="@color/white"
