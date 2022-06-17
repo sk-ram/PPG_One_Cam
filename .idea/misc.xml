@@ -13,10 +13,12 @@
         <entry key="app/src/main/res/drawable/welcome.xml" value="0.219" />
         <entry key="app/src/main/res/font/fonts.xml" value="0.40208333333333335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14814814814814814" />
+        <entry key="app/src/main/res/layout/dashboard.xml" value="0.30689029918404354" />
         <entry key="app/src/main/res/layout/email_verification.xml" value="0.16973065412569474" />
         <entry key="app/src/main/res/layout/home.xml" value="0.2125" />
         <entry key="app/src/main/res/layout/login.xml" value="0.17058572039333048" />
         <entry key="app/src/main/res/layout/register.xml" value="0.1347972972972973" />
+        <entry key="app/src/main/res/layout/thank_you.xml" value="0.30689029918404354" />
       </map>
     </option>
   </component>
