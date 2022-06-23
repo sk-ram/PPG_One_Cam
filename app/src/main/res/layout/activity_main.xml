@@ -4,88 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:orientation="vertical"
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="49dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:fontFamily="@font/mr"
+        android:text="Cerebri"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="71dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/mb"
+        android:text="Deep"
+        android:textColor="@color/blue"
+        android:textFontWeight="700"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toStartOf="@+id/textView11"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="60dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toStartOf="@+id/textView10"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dc_logo" />
 
-        <LinearLayout
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="50px"
+        android:layout_marginVertical="25px"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="121dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/textureView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:context=".MainActivity">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/activity_main_linechart"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="25"
-            android:background="#FFFFFF"
-            android:orientation="horizontal">
+            tools:layout_editor_absoluteX="141dp"
+            tools:layout_editor_absoluteY="150dp" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
-            android:orientation="vertical">
-
-            <Switch
-                android:id="@+id/switch1"
-                android:layout_width="206dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:checked="true"
-                android:onClick="toggleStart"
-                android:text="Start Tracking" />
-
-            <LinearLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".MainActivity"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_marginHorizontal="50px"
-                android:layout_marginVertical="25px"
-                >
-
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/activity_main_linechart"
-                    android:layout_width="match_parent"
-                    android:layout_height="fill_parent" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="25"
-            android:orientation="horizontal">
-
-            <TextureView
-                android:id="@+id/textureView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="50" />
-
-            <TextureView
-                android:id="@+id/textureView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="50" />
-
-
-        </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="169dp"
+        android:layout_height="162dp"
+        android:layout_marginBottom="127dp"
+        android:background="@drawable/ic_heart_red"
+        android:onClick="toggleStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.762" />
+
+    <TextureView
+        android:id="@+id/textureView2"
+        android:layout_width="81dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="340dp"
+        android:layout_weight="50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

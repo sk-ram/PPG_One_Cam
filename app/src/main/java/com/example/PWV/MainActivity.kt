@@ -198,7 +198,6 @@ class MainActivity : AppCompatActivity() {
 
 //Part2
         entries.add(Entry(1f, 0f))
-
 //Part3
         val vl = LineDataSet(entries, "Sensor Readings")
 //Part4
@@ -216,6 +215,8 @@ class MainActivity : AppCompatActivity() {
 
 //Part7
         lineChart?.axisRight?.isEnabled = false
+        lineChart?.getAxisLeft()?.setDrawGridLines(false);
+        lineChart?.getXAxis()?.setDrawGridLines(false);
         lineChart?.xAxis?.axisMaximum = entryLen.toFloat()
 //Part8
         lineChart?.setTouchEnabled(true)
