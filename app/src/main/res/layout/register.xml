@@ -102,7 +102,6 @@
         android:background="@drawable/redbutton"
         android:fontFamily="@font/rb"
         android:text="Register"
-        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/textView5"

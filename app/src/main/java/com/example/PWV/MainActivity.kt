@@ -18,7 +18,7 @@ import android.util.Size
 import android.view.Surface
 import android.view.TextureView
 import android.view.TextureView.SurfaceTextureListener
-import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -38,8 +38,11 @@ import java.util.*
 import java.util.concurrent.Semaphore
 
 
+
+
+
 class MainActivity : AppCompatActivity() {
-    private var processing = true;
+    private var processing = true
     private var entries = ArrayList<Entry>()
     private val entryLen = 100
     private val MAX_PREVIEW_WIDTH = 1920
@@ -58,22 +61,21 @@ class MainActivity : AppCompatActivity() {
         return sum / num
     }
 
-
     private val mOnImageAvailableListener: ImageReader.OnImageAvailableListener  = object: ImageReader.OnImageAvailableListener{
 
 
         override fun onImageAvailable(reader: ImageReader) {
 
-            var image = reader.acquireNextImage()
+            val image = reader.acquireNextImage()
             if(image != null){
 //                Log.d("RECIEVED", "Received Frame")
-                var plane = image.planes[0]
-                var buffer = plane.buffer
+                val plane = image.planes[0]
+                val buffer = plane.buffer
                 val byteArray = ByteArray(buffer.capacity())
                 for(i in byteArray.indices){
                     byteArray[i] = buffer[i]
                 }
-                var bitmap = BitmapFactory.decodeByteArray(
+                val bitmap = BitmapFactory.decodeByteArray(
                     byteArray,0, byteArray.size
                 )
                 Log.d("red", getAvgRed(bitmap).toString())
@@ -110,7 +112,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    };
+    }
     private val mSurfaceTextureListener: SurfaceTextureListener = object : SurfaceTextureListener {
         override fun onSurfaceTextureAvailable(texture: SurfaceTexture, width: Int, height: Int) {
             openCamera(width, height)
@@ -191,7 +193,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun createGraph(){
-        lineChart = findViewById(R.id.activity_main_linechart);
+        lineChart = findViewById(R.id.activity_main_linechart)
 
         //Part1
 
@@ -215,8 +217,8 @@ class MainActivity : AppCompatActivity() {
 
 //Part7
         lineChart?.axisRight?.isEnabled = false
-        lineChart?.getAxisLeft()?.setDrawGridLines(false);
-        lineChart?.getXAxis()?.setDrawGridLines(false);
+        lineChart?.getAxisLeft()?.setDrawGridLines(false)
+        lineChart?.getXAxis()?.setDrawGridLines(false)
         lineChart?.xAxis?.axisMaximum = entryLen.toFloat()
 //Part8
         lineChart?.setTouchEnabled(true)
@@ -234,8 +236,12 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()        //hide top bar
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mTextureView = findViewById(R.id.textureView2);
-       createGraph()
+        mTextureView = findViewById(R.id.textureView2)
+        createGraph()
+        var button = findViewById<Button>(R.id.button7)
+        button.setOnClickListener {
+            toggleStart()
+        }
     }
 
     private fun openCamera(width: Int, height: Int) {
@@ -301,7 +307,7 @@ class MainActivity : AppCompatActivity() {
                 ) ?: continue
 
                 // For still image captures, we use the largest available size.
-                var sizes = map.getOutputSizes(ImageFormat.JPEG)
+                val sizes = map.getOutputSizes(ImageFormat.JPEG)
 
                 val largest = sizes[0]
 
@@ -574,9 +580,9 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun toggleStart(view: View) {
-        if(processing){
-            processing = false;
+    fun toggleStart() {
+        if (processing) {
+            processing = false
             val FILENAME = "data_file"
             val string = entries.toString()
 
@@ -585,17 +591,10 @@ class MainActivity : AppCompatActivity() {
             fos.close()
             Log.d("TOGGLE", "untoggled")
             closeCamera()
-        }else{
-
-            processing = true;
+        } else{
+            processing = true
             Log.d("TOGGLE", "toggled")
-
             openCamera(MAX_PREVIEW_HEIGHT, MAX_PREVIEW_WIDTH)
-
         }
-
-
     }
-
-
 }

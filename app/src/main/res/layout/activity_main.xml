@@ -89,7 +89,6 @@
         android:layout_height="162dp"
         android:layout_marginBottom="127dp"
         android:background="@drawable/ic_heart_red"
-        android:onClick="toggleStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
