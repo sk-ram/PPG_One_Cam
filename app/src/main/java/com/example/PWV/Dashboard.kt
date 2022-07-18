@@ -5,6 +5,7 @@ import android.app.Activity
 import android.content.ContentValues.TAG
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Base64
 import android.util.Log
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
@@ -20,33 +21,33 @@ class Dashboard : Activity() {
     private val db = Firebase.firestore
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        getData()
-        pieChart = findViewById(R.id.activity_main_piechart)
+//        getData()
+//        pieChart = findViewById(R.id.activity_main_piechart)
 
-        initPieChart()
+//        initPieChart()
 
     }
 
-    val user = Firebase.auth.currentUser?.uid
+//    val user = Firebase.auth.currentUser?.uid
 
-    private fun getData() {
+    /*private fun getData() {
         db.collection("users").whereEqualTo("docID", user).get().addOnSuccessListener {
-            result ->
+                result ->
             for (document in result) {
                 val data = document.data
                 setDataToPieChart(data)
             }
         }
             .addOnFailureListener {
-                exception ->
+                    exception ->
                 Log.w(TAG, "Error getting documents.", exception)
             }
     }
 
     private lateinit var pieChart: PieChart
+    */
 
-
-    private fun initPieChart() {
+    /*private fun initPieChart() {
         pieChart.setUsePercentValues(true)
         pieChart.description.text = ""
         //hollow pie chart
@@ -62,10 +63,10 @@ class Dashboard : Activity() {
         pieChart.legend.isWordWrapEnabled = true
 
     }
-
+    */
 
     // TODO: Figure out how to make a pieChart
-    private fun setDataToPieChart(firebaseData) {
+    /*private fun setDataToPieChart(firebaseData) {
         pieChart.setUsePercentValues(true)
         val dataEntries = ArrayList<PieEntry>()
         dataEntries.add(PieEntry(firebaseData.getValue(firebaseData.keys.elementAt(0)), firebaseData.latest[0].name))
@@ -99,7 +100,7 @@ class Dashboard : Activity() {
 
         pieChart.invalidate()
 
-    }
+    }*/
 
 
 

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PWV">
         <activity
-            android:name="com.example.PWV.MainActivity"
+            android:name="com.example.PWV.home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
