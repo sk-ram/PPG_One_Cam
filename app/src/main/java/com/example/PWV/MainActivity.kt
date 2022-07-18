@@ -113,6 +113,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
     private val mSurfaceTextureListener: SurfaceTextureListener = object : SurfaceTextureListener {
         override fun onSurfaceTextureAvailable(texture: SurfaceTexture, width: Int, height: Int) {
             openCamera(width, height)

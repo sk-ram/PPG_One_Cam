@@ -11,55 +11,79 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/welcome"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="105dp" />
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/welcome" />
 
-    <TextView
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="241dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Welcome to qCardia"
-        android:textSize="25dp"
-        android:fontFamily="@font/jssb"
-        android:textColor="@color/black"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="416dp" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="236dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="188dp"
+        android:background="@drawable/bluebutton"
+        android:fontFamily="@font/jsreg"
+        android:text="LOGIN"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
         android:text="Let's get started!"
-        android:textSize="20dp"
         android:textColor="@color/lightgray"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="480dp" />
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="233dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="22dp"
         android:background="@drawable/redbutton"
         android:fontFamily="@font/jsreg"
         android:text="REGISTER"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="577dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="236dp"
-        android:layout_height="56dp"
-        android:fontFamily="@font/jsreg"
-        android:text="LOGIN"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:background="@drawable/bluebutton"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="647dp" />
+    <TextView
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:fontFamily="@font/jssb"
+        android:inputType="textPersonName"
+        android:text="Welcome to qCardia"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
