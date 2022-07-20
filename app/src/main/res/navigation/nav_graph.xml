@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home3">
+    <fragment
+        android:id="@+id/home3"
+        android:name="com.example.PWV.home"
+        android:label="home"
+        tools:layout="@layout/home" >
+        <action
+            android:id="@+id/action_home3_to_emailPasswordActivity"
+            app:destination="@id/emailPasswordActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/emailPasswordActivity"
+        android:name="com.example.PWV.EmailPasswordActivity"
+        android:label="register"
+        tools:layout="@layout/register" />
+</navigation>

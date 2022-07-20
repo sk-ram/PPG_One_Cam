@@ -6,6 +6,7 @@ package com.example.PWV
 import android.Manifest
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.*
 import android.hardware.camera2.*
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
     private val entryLen = 100
     private val MAX_PREVIEW_WIDTH = 1920
     private val MAX_PREVIEW_HEIGHT = 1080
+    private var cameraStatus = true;
 
 
     private fun getAvgRed(bitmap: Bitmap): Float {
@@ -241,7 +243,12 @@ class MainActivity : AppCompatActivity() {
         createGraph()
         var button = findViewById<Button>(R.id.button7)
         button.setOnClickListener {
-            toggleStart()
+            if (cameraStatus == false) {
+                val intent = Intent(this, thank_you_activity::class.java)
+                startActivity(intent)
+            } else {
+                toggleStart();
+            }
         }
     }
 
@@ -591,6 +598,7 @@ class MainActivity : AppCompatActivity() {
             fos.write(string.toByteArray())
             fos.close()
             Log.d("TOGGLE", "untoggled")
+            cameraStatus = false;
             closeCamera()
         } else{
             processing = true

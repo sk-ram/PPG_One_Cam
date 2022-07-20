@@ -20,10 +20,11 @@ class Dashboard : Activity() {
     private val db = Firebase.firestore
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.dashboard)
         getData()
-        pieChart = findViewById(R.id.activity_main_piechart)
+//        pieChart = findViewById(R.id.activity_main_piechart)
 
-        initPieChart()
+//        initPieChart()
 
     }
 
@@ -34,7 +35,7 @@ class Dashboard : Activity() {
             result ->
             for (document in result) {
                 val data = document.data
-                setDataToPieChart(data)
+//                setDataToPieChart(data)
             }
         }
             .addOnFailureListener {
@@ -43,10 +44,10 @@ class Dashboard : Activity() {
             }
     }
 
-    private lateinit var pieChart: PieChart
+//    private lateinit var pieChart: PieChart
 
 
-    private fun initPieChart() {
+    /*private fun initPieChart() {
         pieChart.setUsePercentValues(true)
         pieChart.description.text = ""
         //hollow pie chart
@@ -61,11 +62,11 @@ class Dashboard : Activity() {
         pieChart.legend.orientation = Legend.LegendOrientation.VERTICAL
         pieChart.legend.isWordWrapEnabled = true
 
-    }
+    }*/
 
 
     // TODO: Figure out how to make a pieChart
-    private fun setDataToPieChart(firebaseData) {
+    /*private fun setDataToPieChart(firebaseData) {
         pieChart.setUsePercentValues(true)
         val dataEntries = ArrayList<PieEntry>()
         dataEntries.add(PieEntry(firebaseData.getValue(firebaseData.keys.elementAt(0)), firebaseData.latest[0].name))
@@ -99,7 +100,7 @@ class Dashboard : Activity() {
 
         pieChart.invalidate()
 
-    }
+    }*/
 
 
 
