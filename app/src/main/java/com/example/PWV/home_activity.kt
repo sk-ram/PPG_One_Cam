@@ -1,14 +1,14 @@
 package com.example.PWV
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
 class home_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.home)
 
         var registerUserBtn = findViewById<Button>(R.id.button)
         var loginUserBtn = findViewById<Button>(R.id.button2)
