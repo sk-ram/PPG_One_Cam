@@ -235,7 +235,6 @@ class MainActivity : AppCompatActivity() {
 //        lineChart?.animateX(1800, Easing.EaseInExpo)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
-
         hideSystemBars()
         supportActionBar?.hide()        //hide top bar
         super.onCreate(savedInstanceState)
@@ -245,7 +244,8 @@ class MainActivity : AppCompatActivity() {
         var button = findViewById<Button>(R.id.button7)
         button.setOnClickListener {
             if (cameraStatus == false) {
-                //route
+                val intent = Intent(this, thank_you_activity::class.java)
+                startActivity(intent)
             } else {
                 toggleStart();
             }
@@ -359,7 +359,7 @@ class MainActivity : AppCompatActivity() {
             // device this code runs.
             Log.d(
                 "Camera2 API not supported on this device",
-                "Sorry"
+               "Sorry"
             )
         }
     }
@@ -597,12 +597,12 @@ class MainActivity : AppCompatActivity() {
             val fos = openFileOutput(FILENAME, MODE_PRIVATE)
             fos.write(string.toByteArray())
             fos.close()
-            Log.d("TOGGLE", "untoggled") //ROUTE TO THANK_YOU.XML
+            Log.d("TOGGLE", "untoggled")
             cameraStatus = false;
             closeCamera()
         } else{
             processing = true
-            Log.d("TOGGLE", "toggled") //ROUTE TO
+            Log.d("TOGGLE", "toggled")
             openCamera(MAX_PREVIEW_HEIGHT, MAX_PREVIEW_WIDTH)
         }
     }

@@ -5,7 +5,6 @@ import android.app.Activity
 import android.content.ContentValues.TAG
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Base64
 import android.util.Log
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
@@ -21,31 +20,32 @@ class Dashboard : Activity() {
     private val db = Firebase.firestore
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        getData()
+        setContentView(R.layout.dashboard)
+        getData()
 //        pieChart = findViewById(R.id.activity_main_piechart)
 
 //        initPieChart()
 
     }
 
-//    val user = Firebase.auth.currentUser?.uid
+    val user = Firebase.auth.currentUser?.uid
 
-    /*private fun getData() {
+    private fun getData() {
         db.collection("users").whereEqualTo("docID", user).get().addOnSuccessListener {
-                result ->
+            result ->
             for (document in result) {
                 val data = document.data
-                setDataToPieChart(data)
+//                setDataToPieChart(data)
             }
         }
             .addOnFailureListener {
-                    exception ->
+                exception ->
                 Log.w(TAG, "Error getting documents.", exception)
             }
     }
 
-    private lateinit var pieChart: PieChart
-    */
+//    private lateinit var pieChart: PieChart
+
 
     /*private fun initPieChart() {
         pieChart.setUsePercentValues(true)
@@ -62,8 +62,8 @@ class Dashboard : Activity() {
         pieChart.legend.orientation = Legend.LegendOrientation.VERTICAL
         pieChart.legend.isWordWrapEnabled = true
 
-    }
-    */
+    }*/
+
 
     // TODO: Figure out how to make a pieChart
     /*private fun setDataToPieChart(firebaseData) {
