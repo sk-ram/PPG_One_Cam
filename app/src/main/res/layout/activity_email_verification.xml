@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".email_verification_activity">
+
 
     <TextView
         android:id="@+id/textView7"
@@ -12,13 +13,11 @@
         android:layout_height="104dp"
         android:layout_marginStart="46dp"
         android:layout_marginEnd="46dp"
-        android:layout_marginBottom="45dp"
         android:fontFamily="@font/rr"
         android:text="An email has been sent to the email you registered with to verify your email. Once verified, press Continue to move on."
         android:textAlignment="center"
         android:textColor="@color/lightgray"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,17 +39,13 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="223dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="344dp"
-        android:background="@drawable/redbutton"
-        android:fontFamily="@font/rb"
+        android:layout_width="188dp"
+        android:layout_height="89dp"
         android:text="Continue"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
