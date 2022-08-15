@@ -7,62 +7,62 @@
     tools:context=".dashboard_activity">
 
 
-<ImageView
-    android:id="@+id/imageView4"
-    android:layout_width="291dp"
-    android:layout_height="67dp"
-    android:layout_marginStart="60dp"
-    android:layout_marginTop="21dp"
-    android:layout_marginBottom="35dp"
-    app:layout_constraintBottom_toTopOf="@+id/activity_main_piechart"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.25"
-    app:srcCompat="@drawable/vytal_logo" />
+    <TextView
+        android:id="@+id/userdata"
+        android:layout_width="264dp"
+        android:layout_height="81dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_piechart" />
 
-<LinearLayout
-    android:id="@+id/linearLayout"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:layout_marginHorizontal="50px"
-    android:layout_marginVertical="25px"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    android:layout_marginBottom="121dp"
-    android:layout_weight="1"
-    android:orientation="vertical"
-    app:layout_constraintBottom_toTopOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:context=".MainActivity">
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="50px"
+        android:layout_marginVertical="25px"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="121dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context=".MainActivity">
 
-<Button
-    android:id="@+id/button6"
-    android:layout_width="243dp"
-    android:layout_height="60dp"
-    android:layout_marginBottom="120dp"
-    android:background="@drawable/redbutton"
-    android:fontFamily="@font/rb"
-    android:text="Take Recording"
-    android:textAllCaps="false"
-    android:textColor="@color/white"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/activity_main_piechart"
-    app:layout_constraintVertical_bias="1.0" />
+    </LinearLayout>
 
-<com.github.mikephil.charting.charts.PieChart
-    android:id="@+id/activity_main_piechart"
-    android:layout_width="330dp"
-    android:layout_height="324dp"
-    android:layout_marginStart="26dp"
-    android:layout_marginEnd="26dp"
-    android:layout_marginBottom="352dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.482"
-    app:layout_constraintStart_toStartOf="parent" />
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChartGraph"
+        android:layout_width="256dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="82dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="243dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/redbutton"
+        android:fontFamily="@font/rb"
+        android:text="Take Recording"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintVertical_bias="1.0" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
