@@ -32,6 +32,7 @@ import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import java.io.File
@@ -602,12 +603,9 @@ class MainActivity : AppCompatActivity() {
             val storageRef = storage.reference
             val dataRef = storageRef.child("data")
 
-            val source = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            val fileRef = dataRef.child(java.util.Random().ints(10, 0, source.length)
-                .asSequence()
-                .map(source::get)
-                .joinToString("")
-            )
+            var user = Firebase.auth.currentUser?.uid
+
+            val fileRef = dataRef.child(if (!user.isNullOrEmpty()) user else "unsigned user")
 
             var uploadTask = fileRef.putBytes(string.toByteArray())
             uploadTask.addOnFailureListener {
