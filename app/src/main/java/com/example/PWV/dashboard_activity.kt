@@ -14,7 +14,6 @@ import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.MPPointF
 import com.google.firebase.firestore.FirebaseFirestore
 
-
 class dashboard_activity : AppCompatActivity() {
 
 
@@ -27,7 +26,7 @@ class dashboard_activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+        setContentView(R.layout.dashboard)
 
         var toMainActivityFromDashboard = findViewById<Button>(R.id.button6)
         toMainActivityFromDashboard.setOnClickListener {
