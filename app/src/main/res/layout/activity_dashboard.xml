@@ -4,21 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".Dashboard">
+    tools:context=".dashboard_activity">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="291dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginBottom="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/activity_main_piechart"
+
+    <TextView
+        android:id="@+id/userdata"
+        android:layout_width="264dp"
+        android:layout_height="81dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
-        app:srcCompat="@drawable/vytal_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_main_piechart" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -38,6 +37,17 @@
 
     </LinearLayout>
 
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChartGraph"
+        android:layout_width="256dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="82dp" />
+
     <Button
         android:id="@+id/button6"
         android:layout_width="243dp"
@@ -51,18 +61,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_main_piechart"
+
         app:layout_constraintVertical_bias="1.0" />
 
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/activity_main_piechart"
-        android:layout_width="330dp"
-        android:layout_height="324dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="352dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
