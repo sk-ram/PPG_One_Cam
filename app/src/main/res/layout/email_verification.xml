@@ -14,7 +14,7 @@
         android:layout_marginEnd="46dp"
         android:layout_marginBottom="45dp"
         android:fontFamily="@font/rr"
-        android:text="An email has been sent to the email you registered with to verify your email. Once verified, press Continue to move on."
+        android:text="@string/email_sent"
         android:textAlignment="center"
         android:textColor="@color/lightgray"
         android:textSize="20dp"

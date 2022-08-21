@@ -32,14 +32,15 @@ import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
 import java.util.*
 import java.util.concurrent.Semaphore
-
-
-
+import kotlin.streams.asSequence
 
 
 class MainActivity : AppCompatActivity() {
@@ -597,6 +598,23 @@ class MainActivity : AppCompatActivity() {
             val fos = openFileOutput(FILENAME, MODE_PRIVATE)
             fos.write(string.toByteArray())
             fos.close()
+
+            val storage = Firebase.storage
+            val storageRef = storage.reference
+            val dataRef = storageRef.child("data")
+
+            var user = Firebase.auth.currentUser?.uid
+
+            val fileRef = dataRef.child(if (!user.isNullOrEmpty()) user else "unsigned user")
+
+            var uploadTask = fileRef.putBytes(string.toByteArray())
+            Log.d("id", Firebase.auth.currentUser.toString())
+            uploadTask.addOnFailureListener {
+                Log.d("UPLOAD","L")
+            }.addOnSuccessListener { taskSnapshot ->
+                Log.d("UPLOAD", taskSnapshot.metadata.toString())
+            }
+
             Log.d("TOGGLE", "untoggled")
             cameraStatus = false;
             closeCamera()
