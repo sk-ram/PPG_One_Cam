@@ -608,6 +608,7 @@ class MainActivity : AppCompatActivity() {
             val fileRef = dataRef.child(if (!user.isNullOrEmpty()) user else "unsigned user")
 
             var uploadTask = fileRef.putBytes(string.toByteArray())
+            Log.d("id", Firebase.auth.currentUser.toString())
             uploadTask.addOnFailureListener {
                 Log.d("UPLOAD","L")
             }.addOnSuccessListener { taskSnapshot ->

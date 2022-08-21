@@ -27,16 +27,13 @@ class login_activity : AppCompatActivity() {
         val firebasePassword = loginPassword.text.toString()
         login.setOnClickListener{
             signIn(firebaseEmail, firebasePassword)
+            val intent = Intent(this, dashboard_activity::class.java)
+            startActivity(intent)
         }
 
         var toRegister = findViewById<TextView>(R.id.textView5)
         toRegister.setOnClickListener {
             val intent = Intent(this, register_activity::class.java)
-            startActivity(intent)
-        }
-        var toMainActivityFromLogin = findViewById<Button>(R.id.login)
-        toMainActivityFromLogin.setOnClickListener {
-            val intent = Intent(this, dashboard_activity::class.java)
             startActivity(intent)
         }
     }
