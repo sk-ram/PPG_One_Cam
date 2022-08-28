@@ -17,7 +17,6 @@ class InputActivity : Activity() {
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.input)
         val button : Button = findViewById(R.id.submit)
         val bp : TextView = findViewById(R.id.bp)
@@ -37,7 +36,6 @@ class InputActivity : Activity() {
                     .addOnSuccessListener { Log.d("GLUCOSE", "DocumentSnapshot successfully updated!") }
                     .addOnFailureListener { e -> Log.w("GLUCOSE", "Error updating document", e) }
             }
-
             Log.d("bp", bp.text.toString())
             Log.d("glucose", glucose.text.toString())
         })
