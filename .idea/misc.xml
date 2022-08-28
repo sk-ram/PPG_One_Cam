@@ -25,6 +25,12 @@
         <entry key="..\:/Users/Cindy Yang/StudioProjects/PPG_One_Cam/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.116" />
         <entry key="..\:/Users/Cindy Yang/StudioProjects/PPG_One_Cam/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.116" />
         <entry key="..\:/Users/Cindy/StudioProjects/PPG_One_Cam/app/src/main/res/layout/activity_home.xml" value="0.16145833333333334" />
+<<<<<<< HEAD
+=======
+        <entry key="..\:/Users/Cindy/StudioProjects/PPG_One_Cam/app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
+        <entry key="..\:/Users/Cindy/StudioProjects/PPG_One_Cam/app/src/main/res/layout/home.xml" value="0.3020833333333333" />
+        <entry key="..\:/Users/Cindy/StudioProjects/PPG_One_Cam/app/src/main/res/layout/login.xml" value="0.1503623188405797" />
+>>>>>>> origin/master
         <entry key="..\:/Users/ram15/AndroidStudioProjects/PWV/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/bluebutton.xml" value="0.215" />
         <entry key="app/src/main/res/drawable/button_shadow.xml" value="0.3735" />
