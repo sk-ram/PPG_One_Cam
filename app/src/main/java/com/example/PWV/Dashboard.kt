@@ -15,9 +15,12 @@ import com.github.mikephil.charting.formatter.PercentFormatter
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import io.realm.kotlin.mongodb.App
 
 class Dashboard : Activity() {
     private val db = Firebase.firestore
+    val app: App = App.create("cardios-data-uyrcp") // Replace this with your App ID
+    lateinit var userID: String
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboard)
@@ -26,6 +29,9 @@ class Dashboard : Activity() {
 
 //        initPieChart()
 
+        if (app.currentUser?.loggedIn == true) {
+            userID = app.currentUser!!.identity
+        }
     }
 
     val user = Firebase.auth.currentUser?.uid
