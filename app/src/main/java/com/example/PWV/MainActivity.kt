@@ -35,6 +35,11 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import io.realm.kotlin.Realm
+import io.realm.kotlin.internal.platform.runBlocking
+import io.realm.kotlin.mongodb.App
+import io.realm.kotlin.mongodb.sync.SyncConfiguration
+import io.realm.kotlin.types.RealmObject
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
@@ -603,16 +608,22 @@ class MainActivity : AppCompatActivity() {
             val storageRef = storage.reference
             val dataRef = storageRef.child("data")
 
-            var user = Firebase.auth.currentUser?.uid
+            val app = App.create("cardios-data-uyrcp")
+            // use constants for query names so you can edit or remove them later
+            runBlocking {
+                val user = app.currentUser
+                if (user?.loggedIn == true) {
+                    val config = SyncConfiguration.Builder(user, setOf(PPG::class)).build()
+                    val realm = Realm.open(config)
+                    Log.d("REALM","Successfully opened realm: ${realm.configuration.name}")
 
-            val fileRef = dataRef.child(if (!user.isNullOrEmpty()) user else "unsigned user")
-
-            var uploadTask = fileRef.putBytes(string.toByteArray())
-            Log.d("id", Firebase.auth.currentUser.toString())
-            uploadTask.addOnFailureListener {
-                Log.d("UPLOAD","L")
-            }.addOnSuccessListener { taskSnapshot ->
-                Log.d("UPLOAD", taskSnapshot.metadata.toString())
+                    realm.writeBlocking {
+                        copyToRealm(PPG().apply {
+                            id = user.identity
+                            data = string.toByteArray()
+                        })
+                    }
+                }
             }
 
             Log.d("TOGGLE", "untoggled")
@@ -624,4 +635,9 @@ class MainActivity : AppCompatActivity() {
             openCamera(MAX_PREVIEW_HEIGHT, MAX_PREVIEW_WIDTH)
         }
     }
+}
+
+class PPG : RealmObject {
+    lateinit var id: String
+    lateinit var data: ByteArray
 }
