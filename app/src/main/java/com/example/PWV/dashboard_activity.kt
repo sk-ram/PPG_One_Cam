@@ -117,7 +117,7 @@ class dashboard_activity : AppCompatActivity() {
                     piedataset.setSelectionShift(5f)
                     val data=PieData(piedataset)
                     data.setDrawValues(true)
-                    data.setValueFormatter(PercentFormatter(chart))
+                    // data.setValueFormatter(PercentFormatter(chart))
                     data.setValueTextSize(12f)
                     data.setValueTextColor(Color.BLACK)
 
