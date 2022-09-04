@@ -22,7 +22,6 @@ class InputActivity : Activity() {
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.input)
         val button : Button = findViewById(R.id.submit)
         val bpText : TextView = findViewById(R.id.bp)
